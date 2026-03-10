@@ -232,6 +232,7 @@ async def test_spend_policy(
         controls_payload = controls.model_dump()
         payload = {
             "card_token": card.token,
+            "card_last_four": card.last_four,
             "cardholder": {
                 "name": f"{cardholder.first_name} {cardholder.last_name}".strip(),
                 "team": cardholder.team,
@@ -240,6 +241,7 @@ async def test_spend_policy(
             "card_limit": card.limit.model_dump() if card.limit else None,
             "scenario": scenario,
             "controls": controls_payload,
+            "category_labels": CATEGORY_LABELS,
             "merchant_category_map": merchant_names_by_category(),
             "controls_summary": _controls_summary(controls_payload),
             "instruction": (
