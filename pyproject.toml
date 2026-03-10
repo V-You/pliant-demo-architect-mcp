@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pliant-demo-architect-mcp"
+version = "0.1.0"
+description = "Mock-first FastMCP server for Pliant demo preparation and technical evaluation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=3.1.0",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+
+[project.scripts]
+pliant-demo-architect = "server:main"
+
+[tool.setuptools]
+py-modules = ["server", "client", "models", "mock", "fixtures"]
+packages = ["apps"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
