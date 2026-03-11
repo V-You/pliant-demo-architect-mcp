@@ -2,7 +2,7 @@
 
 This is an MCP server for: preparing Pliant demo scenarios, configuring spend controls, testing policies in natural language, generating realistic transaction data, and diagnosing callback issues from inside VS Code.
 
-The project is built around the workflow of a Pliant Solution Consultant. Instead of clicking through a sandbox UI before every prospect call, the consultant runs a prompt chain, gets a configured mock environment, and then uses follow-up prompts to test policy edge cases and answer technical webhook questions live.
+The project is built around the workflow of a Pliant Solution Consultant (SC). Instead of clicking through a sandbox UI before every prospect call, the consultant runs a prompt chain, gets a configured mock environment, and then uses follow-up prompts to test policy edge cases and answer technical webhook questions live.
 
 The current implementation is mock-first. It keeps data in memory, mirrors the real Pliant API shapes where practical, and is designed so a future live client can replace the mock client without changing the tool contract.
 
@@ -42,7 +42,7 @@ The server turns that workflow into five MCP tools and two inline app views.
 
 ```mermaid
 flowchart LR
-		U[SSC in VS Code] --> C[Copilot or MCP-capable host]
+		U[SC in VS Code] --> C[Copilot or MCP-capable host]
 		C --> S[FastMCP server]
 
 		subgraph T[tool layer]
@@ -142,7 +142,7 @@ The repo includes two skills under `.github/skills/`:
 - `pliant-demo-prep` for end-to-end scenario setup
 - `pliant-policy-check` for spend-policy evaluation prompts
 
-These map directly to the two most common SSC workflows: pre-call setup and live policy testing.
+These map directly to the two most common SC workflows: pre-call setup and live policy testing.
 
 ## Prompt chains
 
@@ -277,7 +277,7 @@ This repo is designed to be demoed, not just read. The README should be enough f
 - controls are visible and legible in the inline app
 - blocked and allowed outcomes are easy to explain
 - webhook reliability questions can be handled without leaving the IDE
-- the toolchain looks reusable by other SSCs, not like a one-off prototype
+- the toolchain looks reusable by other SCs, not like a one-off prototype
 
 ### Publishing note
 
@@ -346,7 +346,7 @@ pliant-demo-architect-mcp/
 
 If you need to explain the project quickly, these are the most useful angles:
 
-- It mirrors an SSC's real workflow rather than exposing a bag of disconnected API wrappers.
+- It mirrors an SC's real workflow rather than exposing a bag of disconnected API wrappers.
 - It turns pre-call setup into a repeatable prompt chain instead of manual dashboard prep.
 - It shows live policy reasoning and technical callback diagnostics in one place.
 - It is mock-first today, but the tool contract is already separated from the client implementation.
