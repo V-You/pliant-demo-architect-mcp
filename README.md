@@ -175,10 +175,10 @@ Step 5: "Test: Can Anna buy a EUR 200 dinner on Friday at 20:00?"
 
 Expected outcome:
 
-- one org, card account, cardholder, and card
-- controls showing allowed categories, weekday hours, and amount limit
-- eight transactions with a mix of confirmed and declined attempts
-- one obviously allowed scenario and one obviously blocked scenario
+- One org, card account, cardholder, and card
+- Controls showing allowed categories, weekday hours, and amount limit
+- Eight transactions with a mix of confirmed and declined attempts
+- One obviously allowed scenario and one obviously blocked scenario
 
 ### Technical evaluation
 
@@ -245,21 +245,13 @@ It prints a compact summary and exits non-zero if any tool returns an error payl
 
 ## Walkthrough and recording guide
 
-This repo is designed to be demoed, not just read. The README should be enough for a viewer to understand the narrative before you start recording.
+[add here]
 
-### Recording setup
-
-- Use VS Code in focus
-- Record at 1920x1080 or better
-- Keep terminal and chat text at 14pt or larger
-- Target 3 to 5 minutes
-- No voiceover is required if the prompts and outputs are readable
-
-### Suggested recording script
+### Recording script
 
 | Timestamp | Action | What should be visible |
 |-----------|--------|------------------------|
-| 0:00 | Open the repo and show the README briefly | project framing and tool list |
+| 0:00 | Repo opens, show README | project framing and tool list |
 | 0:15 | Start the full demo prep chain | prompt entered in chat |
 | 0:20 | Run `setup_demo_scenario` | created IDs and ready message |
 | 0:35 | Run `set_card_controls` | controls payload |
@@ -271,17 +263,16 @@ This repo is designed to be demoed, not just read. The README should be enough f
 | 2:30 | Ask about retry strategy | LLM explanation based on payload |
 | 2:50 | Close on repo link or README summary | final framing |
 
-### What a strong walkthrough should prove
+Try the same with Skill calls only.
 
-- the demo environment is reproducible from prompt chains
-- controls are visible and legible in the inline app
-- blocked and allowed outcomes are easy to explain
-- webhook reliability questions can be handled without leaving the IDE
-- the toolchain looks reusable by other SCs, not like a one-off prototype
+### Walkthrough shows:
 
-### Publishing note
+- The demo environment is reproducible from prompt chains
+- Controls are visible and legible in the inline app
+- Blocked and allowed outcomes are easy to explain
+- Webhook reliability questions can be handled without leaving the IDE
+- The toolchain looks reusable by other SCs, not like a one-off prototype
 
-The recording itself is not committed in this repo yet. When you produce it, embed or link it from this README.
 
 ## Validation
 
@@ -338,13 +329,11 @@ pliant-demo-architect-mcp/
 |     `- pliant-policy-check/
 |        `- SKILL.md
 `- md/
-	 |- PRD_initial_20260306.md
-	 `- PRD_initial_20260306_open-questions.md
 ```
 
-## Interview and demo framing
+## Demo framing
 
-If you need to explain the project quickly, these are the most useful angles:
+Angles to explain the project quickly:
 
 - It mirrors an SC's real workflow rather than exposing a bag of disconnected API wrappers.
 - It turns pre-call setup into a repeatable prompt chain instead of manual dashboard prep.
