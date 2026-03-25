@@ -1,6 +1,7 @@
 ---
-name: pliant-policy-check
-description: Fetch a card's current controls and evaluate a spend scenario in plain language using the structured tool output.
+name: "pliant-policy-check"
+description: "Fetch a card's current controls and evaluate a spend scenario in plain language using the structured tool output."
+argument-hint: "[description]"
 ---
 
 # Pliant policy check

@@ -1,6 +1,7 @@
 ---
-name: pliant-demo-prep
-description: Prepare a full mock Pliant demo scenario, apply card controls, and populate realistic transactions for a prospect demo.
+name: "pliant-demo-prep"
+description: "Prepare a full mock Pliant demo scenario, apply card controls, and populate realistic transactions for a prospect demo."
+argument-hint: "[description]"
 ---
 
 # Pliant demo prep

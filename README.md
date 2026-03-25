@@ -1,10 +1,55 @@
 # Pliant Demo Architect MCP
 
-This is an MCP server for: preparing Pliant demo scenarios, configuring spend controls, testing policies in natural language, generating realistic transaction data, and diagnosing callback issues from inside VS Code.
+This MCP server sets up **Pliant** demo scenarios. It enables configuring spend controls, testing policies in natural language, generating realistic transaction data, and diagnosing callback issues - all from inside VS Code.
 
-The project is built around the workflow of a Pliant Solution Consultant (SC). Instead of clicking through a sandbox UI before every prospect call, the consultant runs a prompt chain, gets a configured mock environment, and then uses follow-up prompts to test policy edge cases and answer technical webhook questions live.
+The workflow is that of a **Solution Consultant** (SC). Instead of clicking through a sandbox UI before every prospect call, the SC runs a prompt chain and gets a perfectly configured mock environment. The SC then uses follow-up prompts to test policy edge cases and answer technical webhook questions live during the demo.
 
-The current implementation is mock-first. It keeps data in memory, mirrors the real Pliant API shapes where practical, and is designed so a future live client can replace the mock client without changing the tool contract.
+<table>
+    <thead>
+        <tr>
+            <th>
+                <kbd><b>/pliant-demo-prep</b></kbd> Set up a demo:
+            </th>
+            <th>
+                Add details and test transactions
+            </th>
+            <th>
+                Can Anna buy EUR 300 Google Ads on Monday at 10am?
+            </th>
+            <th>
+                Follow up question (brief/non-UI as answer is obvious)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td valign="top" align="center">
+                <kbd>
+                    <img src="img/step1.png" alt="Set up demo" width="111">
+                </kbd>
+            </td>
+            <td valign="top" align="center">
+                <kbd>
+                    <img src="img/step2a.png" alt="Add data" width="111">
+                </kbd>
+				<br>
+                <kbd>
+                    <img src="img/step2b.png" alt="Add data" width="111">
+                </kbd>
+            </td>
+            <td valign="top" align="center">
+                <kbd>
+                    <img src="img/step3.webp" alt="Ask 1" width="111">
+                </kbd>
+            </td>
+            <td valign="top" align="center">
+                <kbd>
+                    <img src="img/step4.png" alt="Ask 2" width="111">
+                </kbd>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ## Why this exists
 
@@ -343,7 +388,7 @@ Angles to explain the project quickly:
 
 ## Limitations
 
-- Mock mode only. No live Pliant credentials or real HTTP calls yet.
+- **Mock mode only.** No live Pliant credentials or real HTTP calls yet. Crrent implementation is keeps data in memory and mirrors the real Pliant API shapes. Future live client can replace the mock client without changing the tool contract.
 - State is in-memory and resets when the server process restarts.
 - `test_spend_policy` returns data for LLM reasoning rather than a deterministic rule-engine verdict.
 - The walkthrough content is documented, but the actual recording still needs to be produced.
